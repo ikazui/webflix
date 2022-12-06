@@ -12,10 +12,10 @@ function App() {
     });
   }
 
-  function handleSearchSubmit(e) {
+  function handleNavSearchSubmit(e) {
     e.preventDefault();
     console.log(e.target);
-    //searchFunction(e.target.name);
+    searchFunction(navSearch).then((data) => data);
   }
 
   return (

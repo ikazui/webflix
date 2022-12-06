@@ -48,7 +48,9 @@ ggf dynamisch genug, dass  ich eine funktion für alles verwenden kann#ifelse
 export async function getSearchMovies(searchOBj) {
   const apiEndpointSearchMovie = "/search/movie";
   const esc = encodeURIComponent;
+
   const query = Object.keys(searchOBj)
+    .filter((key) => key !== "type")
     .map((key) => esc(key) + "=" + esc(searchOBj[key]))
     .join("&");
   console.log(query);
